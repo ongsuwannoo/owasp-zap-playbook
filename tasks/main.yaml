@@ -7,10 +7,5 @@
     url: "{{ zap_download_url }}"
     dest: "{{ zap_download_path }}"
 
-- name: Install OpenJDK 17 JRE
-  apt:
-    name: openjdk-17-jre
-    state: present
-
 - name: Run ZAP Proxy installation script
   shell: echo -ne '1 o \n \n \n \n \n \n \n \n \n 1\n 1\n 1\n y\n y\n y\n y\n y\n' | sudo sh "{{ zap_download_path }}"
